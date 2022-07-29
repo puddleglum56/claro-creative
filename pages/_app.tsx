@@ -12,6 +12,8 @@ import createEmotionCache from "../utility/createEmotionCache";
 import "../styles/globals.css";
 
 import { ThemeOptions } from "@mui/material/styles";
+import { NextPage } from "next";
+import Layout from "../components/layout";
 
 const themeOptions: ThemeOptions = {
   typography: {
@@ -20,25 +22,31 @@ const themeOptions: ThemeOptions = {
   },
 };
 
+export type NextPageWithLayout = NextPage & {
+  getLayout?: (page: React.ReactElement) => React.ReactNode;
+};
+
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
+  Component: NextPageWithLayout;
 }
 
 const clientSideEmotionCache = createEmotionCache();
 
 const theme = createTheme(themeOptions);
 
-const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
+export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  const getLayout = Component.getLayout ?? ((page) => page);
 
-  return (
+  return getLayout(
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </CacheProvider>
   );
-};
-
-export default MyApp;
+}
