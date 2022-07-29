@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const logoRatio = 2077 / 921;
@@ -19,8 +20,12 @@ const Home: NextPage = () => {
             height={logoHeight}
           />
         </Box>
-        <Typography>Home</Typography>
-        <Typography>About</Typography>
+        <Link href="/home">
+          <Typography sx={{ cursor: "pointer" }}>Home</Typography>
+        </Link>
+        <Link href="/about">
+          <Typography sx={{ cursor: "pointer" }}>About</Typography>
+        </Link>
       </Stack>
       <Head>
         <title>Claro Creative Studio</title>
