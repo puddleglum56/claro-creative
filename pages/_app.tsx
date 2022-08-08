@@ -18,7 +18,7 @@ import Layout from "../components/layout";
 const themeOptions: ThemeOptions = {
   typography: {
     fontFamily: "Poppins, sans-serif",
-    fontSize: 16,
+    fontSize: 15,
   },
 };
 

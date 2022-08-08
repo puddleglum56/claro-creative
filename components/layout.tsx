@@ -10,7 +10,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Stack direction="column" spacing={4}>
-        <Stack direction="row" spacing={10} alignItems="center">
+        <Stack
+          direction="row"
+          spacing={10}
+          alignItems="center"
+          justifyContent="flex-end"
+        >
+          <Link href="/">
+            <Typography sx={{ cursor: "pointer" }}>Home</Typography>
+          </Link>
+          <Link href="/about">
+            <Typography sx={{ cursor: "pointer" }}>About</Typography>
+          </Link>
+          <Link href="/services">
+            <Typography sx={{ cursor: "pointer" }}>Services</Typography>
+          </Link>
+          <Link href="/contact">
+            <Typography sx={{ cursor: "pointer" }}>Contact</Typography>
+          </Link>
           <Box>
             <Image
               src="/logo-blue-01.svg"
@@ -19,12 +36,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               height={logoHeight}
             />
           </Box>
-          <Link href="/">
-            <Typography sx={{ cursor: "pointer" }}>Home</Typography>
-          </Link>
-          <Link href="/about">
-            <Typography sx={{ cursor: "pointer" }}>About</Typography>
-          </Link>
         </Stack>
         {children}
       </Stack>
