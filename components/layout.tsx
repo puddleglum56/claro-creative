@@ -14,7 +14,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           direction="row"
           spacing={10}
           alignItems="center"
-          justifyContent="flex-end"
+          justifyContent="center"
+          width="100vw"
         >
           <Link href="/">
             <Typography sx={{ cursor: "pointer" }}>Home</Typography>
@@ -28,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/contact">
             <Typography sx={{ cursor: "pointer" }}>Contact</Typography>
           </Link>
-          <Box>
+          <Box marginLeft="auto">
             <Image
               src="/logo-blue-01.svg"
               alt="Claro Creative Logo"
