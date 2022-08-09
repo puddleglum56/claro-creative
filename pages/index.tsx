@@ -6,34 +6,41 @@ const Home: NextPage = () => {
   const [animating, setAnimating] = useState(0);
   const containerRef = useRef();
   const space = <Typography fontSize={50}>&nbsp;</Typography>;
+  // const props = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
 
   const nextAnimation = () => {
-    console.log("nextAnimation");
+    console.log("nextAnimation", animating);
     setAnimating(animating + 1);
   };
 
   const animations = [
     <Slide
+      key={0}
       direction="up"
       in={animating === 0}
       container={containerRef.current}
-      onExited={() => nextAnimation()}
+      addEndListener={() => nextAnimation()}
+      timeout={500}
     >
       <Typography fontSize={50}>business</Typography>
     </Slide>,
     <Slide
+      key={1}
       direction="up"
       in={animating === 1}
       container={containerRef.current}
-      onExited={nextAnimation}
+      addEndListener={() => nextAnimation()}
+      timeout={500}
     >
       <Typography fontSize={50}>passion</Typography>
     </Slide>,
     <Slide
+      key={2}
       direction="up"
       in={animating === 2}
       container={containerRef.current}
-      onExited={nextAnimation}
+      addEndListener={() => nextAnimation()}
+      timeout={500}
     >
       <Typography fontSize={50}>job</Typography>
     </Slide>,
