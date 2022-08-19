@@ -9,13 +9,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const logoWidth = logoHeight * logoRatio;
   return (
     <>
-      <Stack direction="column" spacing={4}>
+      <Stack
+        direction="column"
+        height="100vh"
+        width="100vw"
+        alignItems="stretch"
+      >
         <Stack
           direction="row"
           spacing={10}
           alignItems="center"
           justifyContent="center"
-          width="100vw"
         >
           <Link href="/">
             <Typography sx={{ cursor: "pointer" }}>Home</Typography>

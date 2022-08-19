@@ -9,7 +9,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import createEmotionCache from "../utility/createEmotionCache";
-import "../styles/globals.css";
 
 import { ThemeOptions } from "@mui/material/styles";
 import { NextPage } from "next";
