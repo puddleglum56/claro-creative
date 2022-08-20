@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         direction="column"
         height="100vh"
         width="100vw"
-        alignItems="stretch"
+        alignItems="center"
       >
         <Stack
           direction="row"

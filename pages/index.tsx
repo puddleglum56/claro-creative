@@ -11,23 +11,24 @@ import {
 
 const Home: NextPage = () => {
   const words = ["passion", "business", "brand", "personality"];
-  const [word, setWord] = useState<string>("");
-  const [counter, setCounter] = useState(0);
+  const [word, setWord] = useState<string>("passion");
+  const [counter, setCounter] = useState(1);
 
   useEffect(() => {
     setWord(words[counter]);
   }, []);
 
   const transitions = useTransition(word, {
-    enter: { y: 90 },
+    from: { y: 90 },
+    enter: { y: 0 },
     leave: { y: 0 },
-    update: { y: 0 },
     config: config.molasses,
     onRest: () => {
       if (counter < words.length - 1) setCounter(counter + 1);
       else setCounter(0);
       setWord(words[counter]);
     },
+    exitBeforeEnter: true,
   });
 
   const AnimatedTypography = animated(Typography);
@@ -44,13 +45,11 @@ const Home: NextPage = () => {
       <Stack direction="row" overflow="hidden" marginTop={-140 + "px"}>
         <Typography fontSize={70}>Your</Typography>
         {space}
-        <Stack direction="column" overflow="hidden" height={100}>
-          {transitions((props, item) => (
-            <AnimatedTypography fontSize={70} style={props}>
-              {item}
-            </AnimatedTypography>
-          ))}
-        </Stack>
+        {transitions((props, item) => (
+          <AnimatedTypography fontSize={70} style={props}>
+            {item}
+          </AnimatedTypography>
+        ))}
         <Typography fontSize={70}>, claro.</Typography>
       </Stack>
     </Stack>
