@@ -13,6 +13,7 @@ const Home: NextPage = () => {
   const words = ["passion", "business", "brand", "personality"];
   const [word, setWord] = useState<string>("passion");
   const [counter, setCounter] = useState(1);
+  const fontSize = 70;
 
   useEffect(() => {
     setWord(words[counter]);
@@ -43,14 +44,16 @@ const Home: NextPage = () => {
       justifyContent="center"
     >
       <Stack direction="row" overflow="hidden" marginTop={-140 + "px"}>
-        <Typography fontSize={70}>Your</Typography>
+        <Typography fontSize={fontSize}>Your</Typography>
         {space}
         {transitions((props, item) => (
-          <AnimatedTypography fontSize={70} style={props}>
+          <AnimatedTypography fontSize={fontSize} style={props}>
             {item}
           </AnimatedTypography>
         ))}
-        <Typography fontSize={70}>, claro.</Typography>
+        <Typography width="100%" fontSize={fontSize}>
+          , claro.
+        </Typography>
       </Stack>
     </Stack>
   );
