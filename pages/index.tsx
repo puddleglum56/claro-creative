@@ -42,12 +42,13 @@ const Home: NextPage = () => {
       flex={1}
       alignItems="center"
       justifyContent="center"
+      maxHeight="100vh"
     >
-      <Stack direction="row" overflow="hidden" marginTop={-140 + "px"}>
+      <Stack direction="row" overflow="hidden">
         <Typography fontSize={fontSize}>Your</Typography>
         {space}
         {transitions((props, item) => (
-          <AnimatedTypography fontSize={fontSize} style={props}>
+          <AnimatedTypography fontSize={fontSize} zIndex={-1} style={props}>
             {item}
           </AnimatedTypography>
         ))}
