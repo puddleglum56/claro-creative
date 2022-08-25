@@ -10,31 +10,43 @@ import {
 } from "react-spring";
 
 const Home: NextPage = () => {
-  const words = ["passion", "business", "brand", "personality"];
+  const words = ["passion", "brand", "personality", "business"];
   const [word, setWord] = useState<string>("passion");
+  const [prevWord, setPrevWord] = useState<string>("business");
   const [counter, setCounter] = useState(1);
   const fontSize = 70;
 
-  useEffect(() => {
-    setWord(words[counter]);
-  }, []);
+  const Space = () => <Typography fontSize={70}>&nbsp;</Typography>;
 
   const transitions = useTransition(word, {
-    from: { y: 90 },
-    enter: { y: 0 },
-    leave: { y: 0 },
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
     config: config.molasses,
     onRest: () => {
       if (counter < words.length - 1) setCounter(counter + 1);
-      else setCounter(0);
+      setPrevWord(word);
       setWord(words[counter]);
     },
     exitBeforeEnter: true,
   });
 
-  const AnimatedTypography = animated(Typography);
+  const getNextWord = () => {
+    var nextWord = "";
+    if (counter < words.length - 1) nextWord = words[counter + 1];
+    else nextWord = words[0];
+    return nextWord;
+  };
 
-  const space = <Typography fontSize={70}>&nbsp;</Typography>;
+  const getWordWidth = (word: string) => word.length * fontSize * 0.53;
+
+  const spring = useSpring({
+    from: { minWidth: getWordWidth(word) },
+    to: { minWidth: getWordWidth(getNextWord()) },
+    config: config.molasses,
+  });
+
+  const AnimatedTypography = animated(Typography);
+  const AnimatedStack = animated(Stack);
 
   return (
     <Stack
@@ -46,12 +58,20 @@ const Home: NextPage = () => {
     >
       <Stack direction="row" overflow="hidden">
         <Typography fontSize={fontSize}>Your</Typography>
-        {space}
-        {transitions((props, item) => (
-          <AnimatedTypography fontSize={fontSize} zIndex={-1} style={props}>
-            {item}
-          </AnimatedTypography>
-        ))}
+        <Space />
+        <Stack
+          direction="row"
+          minWidth={getWordWidth("personality")}
+          justifyContent="center"
+          borderBottom="7px solid"
+          mx={2}
+        >
+          {transitions((props, item) => (
+            <AnimatedTypography fontSize={fontSize} zIndex={-1} style={props}>
+              {item}
+            </AnimatedTypography>
+          ))}
+        </Stack>
         <Typography width="100%" fontSize={fontSize}>
           , claro.
         </Typography>
