@@ -23,7 +23,6 @@ const Home: NextPage = () => {
     config: config.molasses,
     onRest: () => {
       if (counter < words.length - 1) setCounter(counter + 1);
-      setPrevWord(word);
       setWord(words[counter]);
     },
     exitBeforeEnter: true,
