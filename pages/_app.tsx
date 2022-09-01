@@ -12,7 +12,7 @@ import createEmotionCache from "../utility/createEmotionCache";
 
 import { ThemeOptions } from "@mui/material/styles";
 import { NextPage } from "next";
-import Layout from "../components/layout";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const themeOptions: ThemeOptions = {
   typography: {
@@ -42,9 +42,9 @@ export default function MyApp(props: MyAppProps) {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Layout>
+        <ParallaxProvider>
           <Component {...pageProps} />
-        </Layout>
+        </ParallaxProvider>
       </ThemeProvider>
     </CacheProvider>
   );
