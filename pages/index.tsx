@@ -12,7 +12,6 @@ import {
 const Home: NextPage = () => {
   const words = ["passion", "brand", "personality", "business"];
   const [word, setWord] = useState<string>("passion");
-  const [prevWord, setPrevWord] = useState<string>("business");
   const [counter, setCounter] = useState(1);
   const fontSize = 70;
 
@@ -29,15 +28,6 @@ const Home: NextPage = () => {
     },
     exitBeforeEnter: true,
   });
-
-  const getNextWord = () => {
-    var nextWord = "";
-    if (counter < words.length - 1) nextWord = words[counter + 1];
-    else nextWord = words[0];
-    return nextWord;
-  };
-
-  const getWordWidth = (word: string) => word.length * fontSize * 0.53;
 
   const AnimatedTypography = animated(Typography);
 

@@ -38,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           justifyContent="center"
           position="fixed"
           top={0}
-          bgcolor="white"
+          bgcolor="rgba(255, 255, 255, 0.97)"
         >
           <Typography sx={{ cursor: "pointer" }} onClick={handleClick}>
             Home
