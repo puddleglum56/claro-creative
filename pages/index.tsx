@@ -1,13 +1,7 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { type NextPage } from "next";
-import { useEffect, useState } from "react";
-import {
-  animated,
-  useSpring,
-  useSpringRef,
-  useTransition,
-  config,
-} from "react-spring";
+import { useState } from "react";
+import { animated, useTransition, config } from "react-spring";
 
 const Home: NextPage = () => {
   const words = ["passion", "brand", "personality", "business"];
