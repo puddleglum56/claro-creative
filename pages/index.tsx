@@ -39,14 +39,7 @@ const Home: NextPage = () => {
 
   const getWordWidth = (word: string) => word.length * fontSize * 0.53;
 
-  const spring = useSpring({
-    from: { minWidth: getWordWidth(word) },
-    to: { minWidth: getWordWidth(getNextWord()) },
-    config: config.molasses,
-  });
-
   const AnimatedTypography = animated(Typography);
-  const AnimatedStack = animated(Stack);
 
   return (
     <Stack
@@ -59,13 +52,7 @@ const Home: NextPage = () => {
       <Stack direction="row" overflow="hidden">
         <Typography fontSize={fontSize}>Your</Typography>
         <Space />
-        <Stack
-          direction="row"
-          minWidth={getWordWidth("personality")}
-          justifyContent="center"
-          borderBottom="7px solid"
-          mx={2}
-        >
+        <Stack direction="row" justifyContent="center">
           {transitions((props, item) => (
             <AnimatedTypography fontSize={fontSize} zIndex={-1} style={props}>
               {item}
