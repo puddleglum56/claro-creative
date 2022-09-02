@@ -72,7 +72,11 @@ export default function Header() {
           />
         </Box>
         <Box sx={{ display: { xs: "flex", md: "none" } }}>
-          <IconButton size="large" onClick={handleOpenNavMenu}>
+          <IconButton
+            size="large"
+            onClick={handleOpenNavMenu}
+            sx={{ color: "black" }}
+          >
             <MenuIcon />
           </IconButton>
           <Menu
@@ -90,7 +94,7 @@ export default function Header() {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
-              display: { xs: "block", md: "none" },
+              display: { xs: "flex", md: "none" },
             }}
           >
             {sections.map((section) => (
