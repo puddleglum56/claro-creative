@@ -10,14 +10,14 @@ import "@fontsource/roboto/700.css";
 
 import createEmotionCache from "../utility/createEmotionCache";
 
-import { ThemeOptions } from "@mui/material/styles";
+import { responsiveFontSizes, ThemeOptions } from "@mui/material/styles";
 import { NextPage } from "next";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 const themeOptions: ThemeOptions = {
   typography: {
     fontFamily: "Poppins, sans-serif",
-    fontSize: 17,
+    fontSize: 16,
   },
 };
 
@@ -32,7 +32,8 @@ interface MyAppProps extends AppProps {
 
 const clientSideEmotionCache = createEmotionCache();
 
-const theme = createTheme(themeOptions);
+const unresponsiveTheme = createTheme(themeOptions);
+const theme = responsiveFontSizes(unresponsiveTheme);
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;

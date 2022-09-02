@@ -11,12 +11,12 @@ export default function Section(props: { title: string }) {
       maxHeight="100vh"
     >
       <Typography
-        fontSize={50}
+        variant="h3"
         fontWeight="bold"
         sx={{
-          background: "-webkit-linear-gradient(#eee, #333)",
-          "-webkit-background-clip": "text",
-          "-webkit-text-fill-color": "transparent",
+          background: "linear-gradient(45deg, #8338EC, #3C84FF)",
+          backgroundClip: "text",
+          textFillColor: "transparent",
         }}
       >
         {capitalize(props.title)}
