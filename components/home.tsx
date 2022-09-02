@@ -47,10 +47,17 @@ export default function Home() {
           ))}
           <Typography variant="h2">,</Typography>
           <Space />
+          <Typography variant="h2" sx={{ display: { xs: "none", md: "flex" } }}>
+            claro.
+          </Typography>
         </Stack>
-        <Typography width="100%" variant="h2">
-          claro.
-        </Typography>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          sx={{ display: { xs: "flex", md: "none" } }}
+        >
+          <Typography variant="h2">claro.</Typography>
+        </Stack>
       </Stack>
     </Stack>
   );
