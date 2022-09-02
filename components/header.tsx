@@ -6,11 +6,11 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import capitalize from "@mui/material/utils/capitalize";
 import Image from "next/image";
 import { config } from "react-spring";
 import useScrollTo from "react-spring-scroll-to-hook";
 import Stack from "@mui/material/Stack";
+import { capitalize } from "@mui/material";
 
 const sections = ["home", "about", "services", "contact"];
 
