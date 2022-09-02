@@ -17,7 +17,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 const themeOptions: ThemeOptions = {
   typography: {
     fontFamily: "Poppins, sans-serif",
-    fontSize: 15,
+    fontSize: 17,
   },
 };
 

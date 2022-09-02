@@ -4,6 +4,8 @@ import Head from "next/head";
 import Home from "../components/home";
 import Header from "../components/header";
 import About from "../components/about";
+import Services from "../components/services";
+import Contact from "../components/contact";
 
 const Index: NextPage = () => {
   return (
@@ -17,6 +19,8 @@ const Index: NextPage = () => {
         <Header />
         <Home />
         <About />
+        <Services />
+        <Contact />
       </Stack>
       <Head>
         <title>Claro Creative Studio</title>

@@ -10,7 +10,7 @@ export default function Header() {
   const { scrollTo } = useScrollTo(config.molasses);
 
   const handleClick = (event: any, section: string) => {
-    scrollTo(document.querySelector("#" + section), -125);
+    scrollTo(document.querySelector("#" + section));
   };
 
   const sections = ["home", "about", "services", "contact"];
@@ -19,7 +19,12 @@ export default function Header() {
     <Typography
       key={section}
       onClick={(event: any) => handleClick(event, section)}
-      sx={{ cursor: "pointer" }}
+      sx={{
+        cursor: "pointer",
+        ":hover": {
+          textShadow: "0px 0px 1px black",
+        },
+      }}
     >
       {capitalize(section)}
     </Typography>

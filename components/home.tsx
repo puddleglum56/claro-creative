@@ -24,7 +24,7 @@ export default function Home() {
 
   const AnimatedTypography = animated(Typography);
 
-  const { ref } = useParallax({ speed: 10 });
+  const { ref } = useParallax({ speed: 5 });
 
   return (
     <Stack

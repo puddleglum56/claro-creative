@@ -1,9 +1,5 @@
-import { Stack, Typography } from "@mui/material";
+import Section from "./section";
 
 export default function About() {
-  return (
-    <Stack id="about">
-      <Typography>Sup you on about</Typography>
-    </Stack>
-  );
+  return <Section title="about" />;
 }
