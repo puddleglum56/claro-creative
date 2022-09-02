@@ -2,10 +2,10 @@ import { Stack } from "@mui/material";
 import { NextPage } from "next";
 import Head from "next/head";
 import Home from "../components/home";
-import Header from "../components/header";
 import About from "../components/about";
 import Services from "../components/services";
 import Contact from "../components/contact";
+import Header from "../components/header";
 
 const Index: NextPage = () => {
   return (

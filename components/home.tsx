@@ -36,28 +36,22 @@ export default function Home() {
       maxHeight="100vh"
       minWidth="100vw"
     >
-      <Grid container ref={ref} zIndex={-1} minWidth={0}>
-        <Grid lg={6} xs={12} display="flex" justifyContent="center">
-          <Stack direction="row" minWidth={0}>
-            <Typography variant="h2">Your</Typography>
-            <Space />
-            {transitions((props, item) => (
-              <AnimatedTypography variant="h2" style={props}>
-                {item}
-              </AnimatedTypography>
-            ))}
-            <Typography variant="h2">,</Typography>
-          </Stack>
-        </Grid>
-        <Grid lg={6} xs={12} display="flex" justifyContent="center">
-          <Stack direction="row" minWidth={0}>
-            <Space />
-            <Typography width="100%" variant="h2">
-              claro.
-            </Typography>
-          </Stack>
-        </Grid>
-      </Grid>
+      <Stack sx={{}} ref={ref}>
+        <Stack direction="row">
+          <Typography variant="h2">Your</Typography>
+          <Space />
+          {transitions((props, item) => (
+            <AnimatedTypography variant="h2" style={props}>
+              {item}
+            </AnimatedTypography>
+          ))}
+          <Typography variant="h2">,</Typography>
+          <Space />
+        </Stack>
+        <Typography width="100%" variant="h2">
+          claro.
+        </Typography>
+      </Stack>
     </Stack>
   );
 }
