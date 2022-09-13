@@ -53,17 +53,26 @@ export default function Header() {
     <AppBar
       position="fixed"
       sx={{
-        bgcolor: "rgba(255, 255, 255, 0.97)",
+        bgcolor: "rgba(255, 255, 255, 0.98)",
         boxShadow: "none",
       }}
     >
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="center"
-        width="100vw"
+        justifyContent="space-between"
       >
-        <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+        <Box sx={{ display: { xs: "none", md: "flex" }}}>
+          <Image
+            src="/logo-blue-01.svg"
+            alt="Claro Creative Logo"
+            width={logoWidth}
+            height={logoHeight}
+          />
+        </Box>
+        <Box
+          sx={{ display: { xs: "flex", md: "none" }, maxHeight: "10vh", ml: "auto"}}
+        >
           <Image
             src="/logo-blue-01.svg"
             alt="Claro Creative Logo"
@@ -111,20 +120,11 @@ export default function Header() {
             </Stack>
           </Menu>
         </Box>
-        <Box
-          sx={{ display: { xs: "flex", md: "none" }, mr: 1, maxHeight: "10vh" }}
-        >
-          <Image
-            src="/logo-blue-01.svg"
-            alt="Claro Creative Logo"
-            width={logoWidth}
-            height={logoHeight}
-          />
-        </Box>
         <Stack
           direction="row"
           sx={{ display: { xs: "none", md: "flex" } }}
           spacing={10}
+          px={5}
         >
           {menuItems}
         </Stack>
