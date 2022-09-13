@@ -1,4 +1,5 @@
 import { capitalize, Stack, Typography } from "@mui/material";
+import { content } from "../content";
 
 export default function Section(props: { title: string }) {
   return (
@@ -9,9 +10,11 @@ export default function Section(props: { title: string }) {
       alignItems="center"
       justifyContent="center"
       maxHeight="100vh"
+      spacing={2}
+      px={{xs: 6, md: 18}}
     >
       <Typography
-        variant="h3"
+        variant="h4"
         fontWeight="bold"
         sx={{
           background: "linear-gradient(45deg, #8338EC, #3C84FF)",
@@ -20,6 +23,9 @@ export default function Section(props: { title: string }) {
         }}
       >
         {capitalize(props.title)}
+      </Typography>
+      <Typography variant="body1" textAlign="center" fontSize={{xs: "100%", md: "150%"}}>
+        {content[props.title]}
       </Typography>
     </Stack>
   );
