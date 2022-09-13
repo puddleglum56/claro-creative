@@ -97,16 +97,18 @@ export default function Header() {
               display: { xs: "flex", md: "none" },
             }}
           >
+            <Stack direction="column" alignItems="center" px={1}>
             {sections.map((section) => (
               <MenuItem
                 key={section}
                 onClick={(event: any) => handleClick(event, section)}
               >
-                <Typography textAlign="center">
+                <Typography> 
                   {capitalize(section)}
                 </Typography>
               </MenuItem>
             ))}
+            </Stack>
           </Menu>
         </Box>
         <Box
