@@ -123,7 +123,7 @@ export default function Header() {
         <Stack
           direction="row"
           sx={{ display: { xs: "none", md: "flex" } }}
-          spacing={10}
+          spacing={5}
           px={5}
         >
           {menuItems}
