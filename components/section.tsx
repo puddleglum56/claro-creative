@@ -10,8 +10,8 @@ export default function Section(props: { title: string }) {
       alignItems="center"
       justifyContent="center"
       maxHeight="100vh"
-      spacing={2}
-      px={{xs: 6, md: 18}}
+      spacing={5}
+      width={{xs: "80vw", md: "50vw"}}
     >
       <Typography
         variant="h4"
